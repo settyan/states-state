@@ -15,15 +15,25 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@master
+
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
       - name: Install Dependencies
         run: yarn install
+
       - name: Build
         run: yarn build
+
       - name: Lint
         run: yarn lint
+
       - name: Test
         run: yarn test:coverage
+
       - name: Upload Coverage
-        uses: codecov/codecov-action@v1.0.13
+        uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
