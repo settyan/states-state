@@ -1,12 +1,11 @@
-import React from "react"
+import React, { VFC } from "react"
 import "normalize.css"
 import "../styles/globals.css"
 
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from "next/app"
 
-// prettier-ignore
-function MyApp({ Component, pageProps }: AppProps) { // eslint-disable-line
+const MyApp: VFC<AppProps> = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
 }
 
