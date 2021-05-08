@@ -16,12 +16,12 @@
     "test:coverage": "jest --passWithNoTests --collect-coverage"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
-    "pre-push": "yarn lint fix && yarn lint && yarn test"
+    "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "dependencies": {
