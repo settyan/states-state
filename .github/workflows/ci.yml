@@ -16,7 +16,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: yarn ci
+        run: yarn install
       - name: Build
         run: yarn build
       - name: Lint
