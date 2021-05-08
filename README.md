@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+![example workflow](https://github.com/settyan/states-state/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/settyan/states-state/branch/main/graph/badge.svg?token=ICMISOCOIF)](https://codecov.io/gh/settyan/states-state)
+
 ## Getting Started
 
 First, run the development server:
