@@ -15,7 +15,8 @@
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --passWithNoTests --collect-coverage",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
@@ -46,6 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "babel-loader": "^8.2.2",
+    "chromatic": "^5.8.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
