@@ -1,0 +1,32 @@
+:root {
+  --c-black: #333;
+  --c-white: #eae8e5;
+  --primary: var(--c-beige);
+  --secondary: var(--c-black);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--secondary);
+  font-size: 1.6rem;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
+    "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic",
+    Verdana, Meiryo, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--primary);
+  overflow-x: hidden;
+  margin: 0;
+}
