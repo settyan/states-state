@@ -12,11 +12,11 @@
   flex-flow: row wrap;
   list-style: none;
   padding: 0;
-  margin: -.4rem -1.6rem;
+  margin: -0.4rem -1.6rem;
 }
 
 .Select_ItemContainer {
-  padding: .4rem 1.6rem;
+  padding: 0.4rem 1.6rem;
 }
 .Select_Item {
   font-weight: 600;
@@ -32,19 +32,19 @@
   border-radius: 50%;
   border: 1px solid #a4a4a4;
   position: absolute;
-  left: .7rem;
+  left: 0.7rem;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .Select_ItemChecked::after {
   content: "";
   display: block;
-  width: .9rem;
-  height: .9rem;
+  width: 0.9rem;
+  height: 0.9rem;
   border-radius: 50%;
   background: var(--c-black);
   position: absolute;
-  left: .7rem;
+  left: 0.7rem;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
