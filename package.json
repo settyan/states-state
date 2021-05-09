@@ -14,12 +14,13 @@
     "fix:prettier": "yarn lint:prettier --write",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --passWithNoTests --collect-coverage",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
+    "pre-commit": "npx lint-staged",
+    "pre-push": "yarn lint"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
