@@ -4,7 +4,7 @@ import { Logo } from "@/components/Logo"
 
 import styles from "./header.module.css"
 
-export type HeaderProps = Readonly<{}>
+export type HeaderProps = Readonly<Record<string, never>>
 
 export const Header: React.VFC<HeaderProps> = (props) => {
   const { ...headerProps } = props
