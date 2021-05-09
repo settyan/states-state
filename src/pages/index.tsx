@@ -10,7 +10,7 @@ const Index: React.VFC = () => {
   return (
     <>
       <Layout>
-        <States states={states} />
+        <States loading={loading} states={states} />
       </Layout>
     </>
   )

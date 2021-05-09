@@ -13,6 +13,7 @@ const Template: Story<StatesProps> = (args) => <States {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  loading: false,
   states: [
     {
       prefCode: 1,
@@ -203,4 +204,16 @@ Default.args = {
       prefName: "沖縄県",
     },
   ],
+}
+
+export const Loading = Template.bind({})
+Loading.args = {
+  loading: true,
+  states: [],
+}
+
+export const Empty = Template.bind({})
+Empty.args = {
+  loading: false,
+  states: [],
 }
