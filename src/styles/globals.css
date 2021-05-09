@@ -1,7 +1,8 @@
 :root {
   --c-black: #333;
-  --c-white: #eae8e5;
-  --primary: var(--c-beige);
+  --c-white: #fff;
+  --c-lightgray: #dedede;
+  --primary: var(--c-white);
   --secondary: var(--c-black);
 }
 
