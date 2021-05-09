@@ -1,0 +1,50 @@
+.Container {
+  padding: 0 2rem;
+}
+
+.Inner {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.SelectContainer {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  padding: 0;
+  margin: -.4rem -1.6rem;
+}
+
+.Select_ItemContainer {
+  padding: .4rem 1.6rem;
+}
+.Select_Item {
+  font-weight: 600;
+  display: block;
+  position: relative;
+  padding-left: 2rem;
+}
+.Select_Item::before {
+  content: "";
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 1px solid #a4a4a4;
+  position: absolute;
+  left: .7rem;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.Select_ItemChecked::after {
+  content: "";
+  display: block;
+  width: .9rem;
+  height: .9rem;
+  border-radius: 50%;
+  background: var(--c-black);
+  position: absolute;
+  left: .7rem;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
