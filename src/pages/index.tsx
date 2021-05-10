@@ -3,7 +3,7 @@ import React, { VFC } from "react"
 import { States } from "@/components/States"
 import { StatesProvider } from "@/contexts"
 import { useStates } from "@/hooks"
-import Layout from "@/layouts/layout"
+import { Layout } from "@/layouts/Layout"
 
 const Index: VFC = () => {
   const [states] = useStates()

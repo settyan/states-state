@@ -1,0 +1,32 @@
+.Wrapper {
+  max-width: 118rem;
+  margin: 0 auto;
+  padding: 8rem 5vw;
+}
+.Inner {
+  display: flex;
+  margin: -4rem;
+}
+.Header {
+  padding: 4rem;
+}
+.Content {
+  flex: 1;
+  padding: 4rem;
+}
+
+@media screen and (max-width: 900px) {
+  .Wrapper {
+    padding: 6rem 5vw;
+  }
+  .Inner {
+    display: block;
+    margin: -2.4rem;
+  }
+  .Header {
+    padding: 2.4rem;
+  }
+  .Content {
+    padding: 2.4rem;
+  }
+}
