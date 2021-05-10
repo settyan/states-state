@@ -1,13 +1,14 @@
 .SelectContainer {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: -0.4rem -1.6rem;
 }
 
 .Select_ItemContainer {
-  padding: 0.4rem 1.6rem;
+  margin: .4rem 1rem;
 }
 .Select_Item {
   font-weight: 600;

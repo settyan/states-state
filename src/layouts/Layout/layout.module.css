@@ -1,33 +1,21 @@
-.Wrapper {
-  max-width: 118rem;
-  margin: 0 auto;
+.Container {
   padding: 8rem 5vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Inner {
-  display: flex;
-  margin: -4rem;
+  max-width: 80rem;
+  flex: 1;
 }
 .Header {
-  padding: 4rem;
-  flex: 0 0 24rem;
-}
-.Content {
-  flex: 1;
-  padding: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {
-  .Wrapper {
+  .Container {
     padding: 6rem 5vw;
-  }
-  .Inner {
-    display: block;
-    margin: -2.4rem;
-  }
-  .Header {
-    padding: 2.4rem;
-  }
-  .Content {
-    padding: 2.4rem;
   }
 }

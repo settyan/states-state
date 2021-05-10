@@ -1,5 +1,6 @@
 import React, { VFC } from "react"
 
+import { Chart } from "@/components/Chart"
 import { States } from "@/components/States"
 import { StatesProvider } from "@/contexts"
 import { useStates } from "@/hooks"
@@ -13,6 +14,7 @@ const Index: VFC = () => {
       <StatesProvider>
         <Layout>
           <States states={states} />
+          <Chart />
         </Layout>
       </StatesProvider>
     </>
