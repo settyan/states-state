@@ -8,8 +8,8 @@ export type StatesResponse = Readonly<{
 }>
 
 export const fetchStates: () => Promise<StatesResponse> = () =>
-  fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/prefectures`, {
+  fetch(`${process.env.API_URL}/api/v1/prefectures`, {
     headers: {
-      "X-API-KEY": process.env.NEXT_PUBLIC_API_KEY as string,
+      "X-API-KEY": process.env.API_KEY as string,
     },
   }).then((r) => r.json() as Promise<StatesResponse>)
