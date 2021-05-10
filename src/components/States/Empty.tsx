@@ -7,7 +7,7 @@ export type EmptyProps = Readonly<Record<string, never>>
 export const Empty: React.VFC<EmptyProps> = () => {
   return (
     <>
-      <p className={styles.Empty}>Empty</p>
+      <p className={styles.Empty}>選択できる県はありません</p>
     </>
   )
 }
