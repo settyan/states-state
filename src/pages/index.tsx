@@ -5,12 +5,12 @@ import { useStates } from "@/hooks"
 import Layout from "@/layouts/layout"
 
 const Index: React.VFC = () => {
-  const [states, error, loading] = useStates()
+  const [states] = useStates()
 
   return (
     <>
       <Layout>
-        <States loading={loading} states={states} />
+        <States states={states} />
       </Layout>
     </>
   )
