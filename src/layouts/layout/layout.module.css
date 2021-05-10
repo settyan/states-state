@@ -9,6 +9,7 @@
 }
 .Header {
   padding: 4rem;
+  flex: 0 0 24rem;
 }
 .Content {
   flex: 1;
