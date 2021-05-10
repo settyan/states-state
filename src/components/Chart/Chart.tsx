@@ -1,43 +1,48 @@
-import React, { VFC } from "react"
+import React, { memo, VFC } from "react"
 
 import { Line } from "react-chartjs-2"
 
 import styles from "./chart.module.css"
+import { Empty } from "./Empty"
 
-export type ChartProps = Readonly<Record<string, never>>
+export type Data = Readonly<{
+  label: string | number
+  y: number
+}>
 
-const data = {
-  labels: ["1", "2", "3", "4", "5", "6"],
-  datasets: [
-    {
-      label: "# of Votes",
-      data: [12, 19, 3, 5, 2, 3],
-      fill: true,
-    },
-  ],
-}
+export type ChartProps = Readonly<{
+  label?: string
+  data?: Data[]
+}>
 
-const options = {
-  animation: false,
-  scales: {
-    yAxes: [
+export const Chart: VFC<ChartProps> = memo((props) => {
+  const data = {
+    datasets: [
       {
-        ticks: {
-          beginAtZero: true,
-        },
+        label: props.label,
+        data: props.data,
+        fill: true,
       },
     ],
-  },
-}
+  }
 
-export const Chart: VFC<ChartProps> = () => {
+  const options = {
+    animation: false,
+  }
+
   return (
     <>
       <div className={styles.Container}>
         <div className={styles.Inner}>
-          <Line type="line" data={data} options={options} />
+          {!props?.data || props?.data.length ? (
+            <Empty />
+          ) : (
+            <Line type="line" data={data} options={options} />
+          )}
         </div>
       </div>
     </>
   )
-}
+})
+
+Chart.displayName = "Chart"

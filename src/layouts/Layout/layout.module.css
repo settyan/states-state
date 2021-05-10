@@ -1,17 +1,12 @@
 .Container {
   padding: 8rem 5vw;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .Inner {
   max-width: 80rem;
-  flex: 1;
+  margin: 0 auto;
 }
 .Header {
   margin-bottom: 4rem;
-  text-align: center;
 }
 
 @media screen and (max-width: 900px) {

@@ -1,12 +1,17 @@
 import React, { VFC } from "react"
+
 import "normalize.css"
 import "../styles/globals.css"
-
+import { Layout } from "@/layouts/Layout"
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from "next/app"
 
 const MyApp: VFC<AppProps> = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for
