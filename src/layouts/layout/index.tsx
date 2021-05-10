@@ -1,17 +1,19 @@
-import React from "react"
+import React, { ReactNode, VFC } from "react"
 
 import { Header } from "@/components/Header"
 
 type Props = Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>
 
-const Index: React.VFC<Props> = (props) => {
+const Index: VFC<Props> = (props) => {
+  const { children } = props
+
   return (
     <>
       <div className="wrapper">
         <Header />
-        <main>{props.children}</main>
+        <main>{children}</main>
       </div>
     </>
   )

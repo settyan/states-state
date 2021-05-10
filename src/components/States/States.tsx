@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, VFC } from "react"
 
 import { State } from "@/types"
 import { RadioGroup } from "@headlessui/react"
@@ -11,7 +11,7 @@ export type StatesProps = Readonly<{
   states: State[] | undefined
 }>
 
-export const States: React.VFC<StatesProps> = (props) => {
+export const States: VFC<StatesProps> = (props) => {
   const { states, ...StatesProps } = props
   const [plan, setPlan] = useState<string>()
 

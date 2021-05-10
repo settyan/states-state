@@ -1,10 +1,10 @@
-import React from "react"
+import React, { VFC } from "react"
 
 import styles from "./empty.module.css"
 
 export type EmptyProps = Readonly<Record<string, never>>
 
-export const Empty: React.VFC<EmptyProps> = () => {
+export const Empty: VFC<EmptyProps> = () => {
   return (
     <>
       <p className={styles.Empty}>選択できる県はありません</p>
