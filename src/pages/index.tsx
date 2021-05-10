@@ -1,20 +1,25 @@
-import React, { VFC } from "react"
+import React, { useCallback, useState, VFC } from "react"
 
+import { Chart } from "@/components/Chart"
 import { States } from "@/components/States"
-import { StatesProvider } from "@/contexts"
 import { useStates } from "@/hooks"
-import { Layout } from "@/layouts/Layout"
 
 const Index: VFC = () => {
   const [states] = useStates()
+  const [state, setState] = useState<number>()
+
+  const handleOnStateChange = useCallback((state: number) => {
+    setState(state)
+  }, [])
 
   return (
     <>
-      <StatesProvider>
-        <Layout>
-          <States states={states} />
-        </Layout>
-      </StatesProvider>
+      <States
+        state={state}
+        states={states}
+        onStateChange={handleOnStateChange}
+      />
+      <Chart />
     </>
   )
 }

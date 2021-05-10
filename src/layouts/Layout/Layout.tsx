@@ -13,7 +13,7 @@ export const Layout: VFC<LayoutProps> = (props) => {
 
   return (
     <>
-      <div className={styles.Wrapper}>
+      <div className={styles.Container}>
         <div className={styles.Inner}>
           <div className={styles.Header}>
             <Header />
