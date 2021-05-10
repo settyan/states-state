@@ -26,12 +26,14 @@ export const useSetStates = (): Dispatch<SetStateAction<States>> => {
 }
 
 type StatesProviderProps = Readonly<{
-  initialStates?: States
+  initialState?: States
   children: React.ReactNode
 }>
 
 export const StatesProvider: VFC<StatesProviderProps> = (props) => {
-  const [state, setState] = useState<States>(props.initialState ?? initialState)
+  const [state, setState] = useState<States>(
+    props?.initialState ?? initialState
+  )
   return (
     <StatesContext.Provider value={state}>
       <SetStatesContext.Provider value={setState}>
