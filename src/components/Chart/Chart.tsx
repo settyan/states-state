@@ -6,7 +6,7 @@ import styles from "./chart.module.css"
 import { Empty } from "./Empty"
 
 export type Data = Readonly<{
-  label: string | number
+  x: string | number
   y: number
 }>
 
@@ -34,7 +34,7 @@ export const Chart: VFC<ChartProps> = memo((props) => {
     <>
       <div className={styles.Container}>
         <div className={styles.Inner}>
-          {!props?.data || props?.data.length ? (
+          {!props?.data || props?.data.length < 1 ? (
             <Empty />
           ) : (
             <Line type="line" data={data} options={options} />

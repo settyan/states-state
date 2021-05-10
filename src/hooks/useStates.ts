@@ -1,15 +1,18 @@
-import { fetchProxyStates, ProxyStatesResponse } from "@/api/fetchProxyStates"
+import { fetchProxyStates } from "@/api/fetchProxyStates"
+import type { StatesResponse } from "@/api/fetchStates"
 import useSWR from "swr"
 import type { SWRConfiguration } from "swr"
 
 export const useStates = (
-  config?: SWRConfiguration<ProxyStatesResponse>
-): [ProxyStatesResponse["result"], unknown, boolean] => {
-  const { data, error, isValidating } = useSWR<ProxyStatesResponse, unknown>(
+  config?: SWRConfiguration<StatesResponse>
+): [StatesResponse["result"], unknown, boolean] => {
+  const { data, error, isValidating } = useSWR<StatesResponse, unknown>(
     "/api/v1/states",
     fetchProxyStates,
     config
   )
 
-  return [data?.result, error, isValidating]
+  const states = data?.result
+
+  return [states, error, isValidating]
 }
