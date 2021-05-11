@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState, VFC } from "react"
 
-import { fetchProxyPopulation } from "@/api/fetchProxyPopulation"
+import { fetchProxyPopulation } from "@/api/fetchPopulation"
 import { fetchStates, StatesResponse } from "@/api/fetchStates"
 import { Chart } from "@/components/Chart"
 import type { Data } from "@/components/Chart/Chart"

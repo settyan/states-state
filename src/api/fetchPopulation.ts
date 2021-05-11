@@ -31,3 +31,10 @@ export const fetchPopulation: (
       },
     }
   ).then((r) => r.json() as Promise<PopulationResponse>)
+
+export const fetchProxyPopulation: (
+  stateCode?: number | string
+) => Promise<PopulationResponse> = (stateCode) =>
+  fetch(`/api/v1/population?stateID=${stateCode}`).then(
+    (r) => r.json() as Promise<PopulationResponse>
+  )

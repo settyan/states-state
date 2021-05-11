@@ -13,3 +13,6 @@ export const fetchStates: () => Promise<StatesResponse> = () =>
       "X-API-KEY": process.env.API_KEY as string,
     },
   }).then((r) => r.json() as Promise<StatesResponse>)
+
+export const fetchProxyStates: () => Promise<StatesResponse> = () =>
+  fetch(`/api/v1/states`).then((r) => r.json() as Promise<StatesResponse>)
