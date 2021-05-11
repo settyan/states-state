@@ -35,12 +35,12 @@ export const StatesSelectItem: VFC<StatesSelectItemProps> = memo((props) => {
 StatesSelectItem.displayName = "StatesSelectItem"
 
 export type StatesSelectProps = Readonly<{
-  states?: State[]
+  states: State[]
   state?: State["prefCode"]
   onStateChange?(state: number): void
 }>
 
-export const StatesSelect: VFC<StatesSelectProps> = memo((props) => {
+export const StatesSelect: VFC<StatesSelectProps> = (props) => {
   const { states, state, onStateChange } = props
 
   const handleOnChange = (value: number) => {
@@ -53,12 +53,10 @@ export const StatesSelect: VFC<StatesSelectProps> = memo((props) => {
         value={state}
         onChange={handleOnChange}
         className={styles.SelectContainer}>
-        {states?.map((state, index) => (
+        {states.map((state, index) => (
           <StatesSelectItem key={index} state={state} />
         ))}
       </RadioGroup>
     </>
   )
-})
-
-StatesSelect.displayName = "States"
+}

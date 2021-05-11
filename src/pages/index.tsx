@@ -6,6 +6,7 @@ import { Chart } from "@/components/Chart"
 import type { Data } from "@/components/Chart/Chart"
 import { States } from "@/components/States"
 import { GetServerSideProps } from "next"
+import Head from "next/head"
 
 export type IndexProps = Readonly<{
   states: StatesResponse["result"]
@@ -16,8 +17,12 @@ const Index: VFC<IndexProps> = (props) => {
 
   const [state, setState] = useState<number>()
   const [chartData, setChartData] = useState<Data[]>([])
+  const [loadingChartData, setLoadingChartData] = useState<boolean>(false)
 
   useEffect(() => {
+    if (!state) return
+
+    setLoadingChartData(true)
     fetchProxyPopulation(state).then((data) => {
       const polulation = data?.result?.data.find(
         (item) => item.label === "総人口"
@@ -29,6 +34,8 @@ const Index: VFC<IndexProps> = (props) => {
           y: item.value,
         })) ?? []
       setChartData(newChartData)
+
+      setLoadingChartData(false)
     })
   }, [state])
 
@@ -41,17 +48,26 @@ const Index: VFC<IndexProps> = (props) => {
 
   return (
     <>
+      <Head>
+        <title>States State</title>
+      </Head>
+
       <States
         state={state}
         states={states}
         onStateChange={handleOnStateChange}
       />
-      <Chart label={state?.toString()} data={chartData} />
+
+      <Chart
+        loading={loadingChartData}
+        label={state?.toString()}
+        data={chartData}
+      />
     </>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const states = (await fetchStates()).result
 
   return {

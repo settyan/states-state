@@ -1,9 +1,9 @@
 import React, { memo, VFC } from "react"
 
+import { Segment } from "@/components/Segment"
 import { Line } from "react-chartjs-2"
 
 import styles from "./chart.module.css"
-import { Empty } from "./Empty"
 
 export type Data = Readonly<{
   x: string | number
@@ -11,6 +11,7 @@ export type Data = Readonly<{
 }>
 
 export type ChartProps = Readonly<{
+  loading: boolean
   label?: string
   data?: Data[]
 }>
@@ -34,8 +35,10 @@ export const Chart: VFC<ChartProps> = memo((props) => {
     <>
       <div className={styles.Container}>
         <div className={styles.Inner}>
-          {!props?.data || props?.data.length < 1 ? (
-            <Empty />
+          {props.loading ? (
+            <Segment>読み込み中</Segment>
+          ) : !props?.data || props?.data.length < 1 ? (
+            <Segment>情報がありません</Segment>
           ) : (
             <Line type="line" data={data} options={options} />
           )}
@@ -46,3 +49,7 @@ export const Chart: VFC<ChartProps> = memo((props) => {
 })
 
 Chart.displayName = "Chart"
+
+Chart.defaultProps = {
+  loading: false,
+}

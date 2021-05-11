@@ -1,8 +1,8 @@
 import React, { memo, useCallback, VFC } from "react"
 
+import { Segment } from "@/components/Segment"
 import { State } from "@/types"
 
-import { Empty } from "./Empty"
 import styles from "./states.module.css"
 import { StatesSelect } from "./StatesSelect"
 
@@ -26,14 +26,14 @@ export const States: VFC<StatesProps> = memo((props) => {
     <>
       <div className={styles.Container}>
         <div className={styles.Inner}>
-          {!states || states.length < 1 ? (
-            <Empty />
-          ) : (
+          {states && states.length > 0 ? (
             <StatesSelect
               states={states}
               state={state}
               onStateChange={handleOnChange}
             />
+          ) : (
+            <Segment>選択可能な県はありません</Segment>
           )}
         </div>
       </div>
