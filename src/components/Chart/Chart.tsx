@@ -10,21 +10,19 @@ export type Data = Readonly<{
   y: number
 }>
 
+export type DataSet = Readonly<{
+  label: string
+  data: Data[]
+}>
+
 export type ChartProps = Readonly<{
   loading: boolean
-  label?: string
-  data?: Data[]
+  dataSets?: DataSet[]
 }>
 
 export const Chart: VFC<ChartProps> = memo((props) => {
   const data = {
-    datasets: [
-      {
-        label: props.label,
-        data: props.data,
-        fill: true,
-      },
-    ],
+    datasets: props.dataSets,
   }
 
   const options = {
@@ -38,7 +36,7 @@ export const Chart: VFC<ChartProps> = memo((props) => {
         <div className={styles.Inner}>
           {props.loading ? (
             <Segment>読み込み中</Segment>
-          ) : !props?.data || props?.data.length < 1 ? (
+          ) : !props?.dataSets || props?.dataSets.length < 1 ? (
             <Segment>情報がありません</Segment>
           ) : (
             <Line type="line" data={data} options={options} />

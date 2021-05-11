@@ -1,4 +1,4 @@
-.SelectContainer {
+.Container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -7,18 +7,21 @@
   margin: -0.4rem -1.6rem;
 }
 
-.Select_ItemContainer {
+.ItemContainer {
   margin: 0.4rem 1rem;
 }
-.Select_Item {
+.Item {
   font-weight: 600;
-  display: block;
+  display: inline-block;
   position: relative;
   padding-left: 2rem;
   cursor: pointer;
   font-size: 1.4rem;
+  appearance: none;
+  border: none;
+  background: none;
 }
-.Select_Item::before {
+.Item::before {
   content: "";
   display: block;
   width: 1.3rem;
@@ -29,6 +32,6 @@
   transform: translateY(-50%);
   border: 1px solid var(--c-black);
 }
-.Select_ItemChecked::before {
+.ItemChecked::before {
   background: var(--c-black);
 }
