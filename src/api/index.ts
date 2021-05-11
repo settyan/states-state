@@ -1,2 +1,2 @@
 export { fetchStates } from "./fetchStates"
-export { fetchProxyStates } from "./fetchProxyStates"
+export { fetchPopulation } from "./fetchPopulation"
