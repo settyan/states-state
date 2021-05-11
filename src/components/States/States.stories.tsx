@@ -13,6 +13,7 @@ const Template: Story<StatesProps> = (args) => <States {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  value: [],
   states: [
     {
       prefCode: 1,
