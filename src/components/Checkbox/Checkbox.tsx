@@ -52,7 +52,7 @@ export const CheckBox = (props: CheckboxProps): JSX.Element => {
 
   return (
     <CheckboxContext.Provider value={{ value, onChange }}>
-      {children}
+      <div className={styles.Container}>{children}</div>
     </CheckboxContext.Provider>
   )
 }
