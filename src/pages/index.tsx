@@ -1,13 +1,19 @@
 import React, { useCallback, useEffect, useState, VFC } from "react"
 
 import { fetchProxyPopulation } from "@/api/fetchProxyPopulation"
+import { fetchStates, StatesResponse } from "@/api/fetchStates"
 import { Chart } from "@/components/Chart"
 import type { Data } from "@/components/Chart/Chart"
 import { States } from "@/components/States"
-import { useStates } from "@/hooks"
+import { GetServerSideProps } from "next"
 
-const Index: VFC = () => {
-  const [states] = useStates()
+export type IndexProps = Readonly<{
+  states: StatesResponse["result"]
+}>
+
+const Index: VFC<IndexProps> = (props) => {
+  const { states } = props
+
   const [state, setState] = useState<number>()
   const [chartData, setChartData] = useState<Data[]>([])
 
@@ -43,6 +49,16 @@ const Index: VFC = () => {
       <Chart label={state?.toString()} data={chartData} />
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const states = (await fetchStates()).result
+
+  return {
+    props: {
+      states,
+    },
+  }
 }
 
 export default Index
