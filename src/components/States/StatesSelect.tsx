@@ -17,7 +17,7 @@ export const StatesSelectItem: VFC<StatesSelectItemProps> = memo((props) => {
     <RadioGroup.Option
       className={clsx(styles.Select_ItemContainer)}
       key={state.prefCode}
-      value={state.prefCode}>
+      value={state}>
       {({ checked }) => (
         <RadioGroup.Label
           as="span"
@@ -36,15 +36,15 @@ StatesSelectItem.displayName = "StatesSelectItem"
 
 export type StatesSelectProps = Readonly<{
   states: State[]
-  state?: State["prefCode"]
-  onStateChange?(state: number): void
+  state?: State
+  onChange?(state: State): void
 }>
 
 export const StatesSelect: VFC<StatesSelectProps> = (props) => {
-  const { states, state, onStateChange } = props
+  const { states, state, onChange } = props
 
-  const handleOnChange = (value: number) => {
-    onStateChange?.(value)
+  const handleOnChange = (value: State) => {
+    onChange?.(value)
   }
 
   return (

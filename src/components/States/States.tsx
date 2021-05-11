@@ -8,16 +8,16 @@ import { StatesSelect } from "./StatesSelect"
 
 export type StatesProps = Readonly<{
   states?: State[]
-  state?: State["prefCode"]
-  onStateChange?(state: number): void
+  state?: State
+  onStateChange?(state: State): void
 }>
 
 export const States: VFC<StatesProps> = memo((props) => {
   const { states, state, onStateChange } = props
 
   const handleOnChange = useCallback(
-    (value: number) => {
-      onStateChange?.(value)
+    (state: State) => {
+      onStateChange?.(state)
     },
     [onStateChange]
   )
@@ -30,7 +30,7 @@ export const States: VFC<StatesProps> = memo((props) => {
             <StatesSelect
               states={states}
               state={state}
-              onStateChange={handleOnChange}
+              onChange={handleOnChange}
             />
           ) : (
             <Segment>選択可能な県はありません</Segment>

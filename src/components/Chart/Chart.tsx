@@ -29,6 +29,7 @@ export const Chart: VFC<ChartProps> = memo((props) => {
 
   const options = {
     animation: false,
+    aspectRatio: 1.7,
   }
 
   return (

@@ -5,6 +5,7 @@ import { fetchStates, StatesResponse } from "@/api/fetchStates"
 import { Chart } from "@/components/Chart"
 import type { Data } from "@/components/Chart/Chart"
 import { States } from "@/components/States"
+import type { State } from "@/types"
 import { GetServerSideProps } from "next"
 import Head from "next/head"
 
@@ -15,7 +16,7 @@ export type IndexProps = Readonly<{
 const Index: VFC<IndexProps> = (props) => {
   const { states } = props
 
-  const [state, setState] = useState<number>()
+  const [state, setState] = useState<State>()
   const [chartData, setChartData] = useState<Data[]>([])
   const [loadingChartData, setLoadingChartData] = useState<boolean>(false)
 
@@ -23,7 +24,7 @@ const Index: VFC<IndexProps> = (props) => {
     if (!state) return
 
     setLoadingChartData(true)
-    fetchProxyPopulation(state).then((data) => {
+    fetchProxyPopulation(state.prefCode).then((data) => {
       const polulation = data?.result?.data.find(
         (item) => item.label === "総人口"
       )?.data
@@ -40,7 +41,7 @@ const Index: VFC<IndexProps> = (props) => {
   }, [state])
 
   const handleOnStateChange = useCallback(
-    (state: number) => {
+    (state: State) => {
       setState(state)
     },
     [setState]
@@ -60,7 +61,7 @@ const Index: VFC<IndexProps> = (props) => {
 
       <Chart
         loading={loadingChartData}
-        label={state?.toString()}
+        label={state?.prefName}
         data={chartData}
       />
     </>
