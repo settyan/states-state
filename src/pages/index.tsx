@@ -68,14 +68,12 @@ const Index: VFC<IndexProps> = (props) => {
     <>
       <Head>
         <title>STATES STATE</title>
+        <link rel="canonical" href="https://states-state.vercel.app" />
         <meta
           name="description"
           content="Population trends in each prefecture are provided."
         />
-        <meta
-          property="og:url"
-          content="https://states-state.vercel.app/ogp.png"
-        />
+        <meta property="og:url" content="https://states-state.vercel.app" />
         <meta property="og:type" content=" website" />
         <meta property="og:title" content="STATES STATE" />
         <meta

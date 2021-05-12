@@ -21,9 +21,7 @@ class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="ja">
-        <Head prefix="og: http://ogp.me/ns#">
-          <link rel="canonical" href="https://states-state.vercel.app" />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
