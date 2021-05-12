@@ -10,7 +10,7 @@ export const Logo: VFC<LogoProps> = (props) => {
   return (
     <>
       <div {...LogoProps}>
-        <Image src="/logo@2x.png" width="140" height="51" />
+        <Image src="/logo@2x.png" width="140" height="51" alt="STATES STATE" />
       </div>
     </>
   )
