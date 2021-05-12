@@ -1,16 +1,10 @@
 module.exports = {
   preset: "ts-jest",
-  testEnvironment: "node",
   roots: ["<rootDir>/src"],
   errorOnDeprecated: true,
   globals: {
     "ts-jest": {
-      tsconfig: {
-        extends: "<rootDir>/tsconfig.json",
-        compilerOptions: {
-          jsx: "react-jsx",
-        },
-      },
+      tsconfig: "tsconfig.jest.json",
     },
   },
   moduleNameMapper: {
