@@ -8,14 +8,14 @@ module.exports = {
       tsconfig: {
         extends: "./tsconfig.json",
         compilerOptions: {
-          "jsx": "react-jsx"
-        }
-      }
+          jsx: "react-jsx",
+        },
+      },
     },
   },
   moduleNameMapper: {
     "^@/(.+)": "<rootDir>/src/$1",
     "\\.(css|less)$": "identity-obj-proxy",
   },
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect']
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
 }
