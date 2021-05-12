@@ -6,7 +6,7 @@ module.exports = {
   globals: {
     "ts-jest": {
       tsconfig: {
-        extends: "./tsconfig.json",
+        extends: "<rootDir>/tsconfig.json",
         compilerOptions: {
           jsx: "react-jsx",
         },
@@ -15,7 +15,7 @@ module.exports = {
   },
   moduleNameMapper: {
     "^@/(.+)": "<rootDir>/src/$1",
-    "\\.(css|less)$": "identity-obj-proxy",
+    "\\.(css)$": "identity-obj-proxy",
   },
   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
 }
