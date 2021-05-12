@@ -54,4 +54,4 @@ Chart.displayName = "Chart"
 
 Chart.defaultProps = {
   loading: false,
-}
+} as ChartProps
