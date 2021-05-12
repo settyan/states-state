@@ -1,0 +1,1 @@
+export { getRandomHexColor } from "./getRandomHexColor"

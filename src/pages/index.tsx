@@ -6,6 +6,7 @@ import type { DataSet } from "@/components/Chart"
 import { Chart } from "@/components/Chart"
 import { States } from "@/components/States"
 import type { State } from "@/types"
+import { getRandomHexColor } from "@/utils"
 import { GetStaticProps } from "next"
 import Head from "next/head"
 
@@ -37,13 +38,13 @@ const Index: VFC<IndexProps> = (props) => {
             y: item.value,
           })) ?? []
 
-        const ramdomColor = Math.floor(Math.random() * 16777215).toString(16)
+        const randomColorHex = getRandomHexColor()
 
         const dataSet: DataSet = {
           label: item.prefName,
           data,
-          borderColor: `#${ramdomColor}`,
-          backgroundColor: `#${ramdomColor}`,
+          borderColor: randomColorHex,
+          backgroundColor: randomColorHex,
         }
 
         return dataSet
