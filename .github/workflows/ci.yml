@@ -10,6 +10,9 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    env:
+      API_URL: ${{secrets.API_URL}}
+      API_KEY: ${{secrets.API_KEY}}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
