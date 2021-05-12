@@ -39,18 +39,22 @@ const Index: VFC<IndexProps> = (props) => {
 
         const ramdomColor = Math.floor(Math.random() * 16777215).toString(16)
 
-        const DataSets: DataSet = {
+        const dataSet: DataSet = {
           label: item.prefName,
           data,
           borderColor: `#${ramdomColor}`,
           backgroundColor: `#${ramdomColor}`,
         }
 
-        setChartDataSets((currentDataSets) => [...currentDataSets, DataSets])
+        return dataSet
       })
-    ).finally(() => {
-      setLoadingChartData(false)
-    })
+    )
+      .then((dataSets) => {
+        setChartDataSets(dataSets)
+      })
+      .finally(() => {
+        setLoadingChartData(false)
+      })
   }, [state])
 
   const handleOnStateChange = useCallback(
