@@ -37,9 +37,13 @@ const Index: VFC<IndexProps> = (props) => {
             y: item.value,
           })) ?? []
 
+        const ramdomColor = Math.floor(Math.random() * 16777215).toString(16)
+
         const DataSets: DataSet = {
           label: item.prefName,
           data,
+          borderColor: `#${ramdomColor}`,
+          backgroundColor: `#${ramdomColor}`,
         }
 
         setChartDataSets((currentDataSets) => [...currentDataSets, DataSets])
