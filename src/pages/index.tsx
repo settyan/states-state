@@ -6,7 +6,7 @@ import type { DataSet } from "@/components/Chart"
 import { Chart } from "@/components/Chart"
 import { States } from "@/components/States"
 import type { State } from "@/types"
-import { GetServerSideProps } from "next"
+import { GetStaticProps } from "next"
 import Head from "next/head"
 
 export type IndexProps = Readonly<{
@@ -73,13 +73,14 @@ const Index: VFC<IndexProps> = (props) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const states = (await fetchStates()).result ?? []
 
   return {
     props: {
       states,
     },
+    revalidate: 600,
   }
 }
 
