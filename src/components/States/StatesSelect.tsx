@@ -27,7 +27,8 @@ export const StatesSelect: VFC<StatesSelectProps> = (props) => {
     <>
       <CheckBox
         value={value.map((state) => state.prefCode)}
-        onChange={handleOnChange}>
+        onChange={handleOnChange}
+        align="center">
         {states.map((state) => (
           <CheckBox.Item value={state.prefCode} key={state.prefCode}>
             {state.prefName}

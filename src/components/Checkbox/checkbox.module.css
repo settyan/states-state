@@ -1,6 +1,12 @@
 .Container {
-  text-align: center;
   margin: -0.4rem;
+}
+
+.Container__Align_Center {
+  text-align: center;
+}
+.Container__Align_Right {
+  text-align: right;
 }
 
 .Item {

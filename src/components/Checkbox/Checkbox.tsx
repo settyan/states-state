@@ -41,18 +41,33 @@ export const CheckboxItem: VFC<CheckboxItemProps> = (props) => {
   )
 }
 
+type Align = "left" | "center" | "right"
+
+const aligmMapContainerClass: { [P in Align]: string } = {
+  left: "Container__Align_Left",
+  center: "Container__Align_Center",
+  right: "Container__Align_Right",
+}
+
 export type CheckboxProps = Readonly<{
   value: (string | number)[]
   onChange?(newValue: (string | number)[]): void
+  align?: Align
   children: ReactNode
 }>
 
 export const CheckBox = (props: CheckboxProps): JSX.Element => {
-  const { value, onChange, children } = props
+  const { value, align, onChange, children } = props
 
   return (
     <CheckboxContext.Provider value={{ value, onChange }}>
-      <div className={styles.Container}>{children}</div>
+      <div
+        className={clsx(
+          styles.Container,
+          align && styles[aligmMapContainerClass[align]]
+        )}>
+        {children}
+      </div>
     </CheckboxContext.Provider>
   )
 }
