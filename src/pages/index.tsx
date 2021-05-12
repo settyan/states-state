@@ -67,7 +67,27 @@ const Index: VFC<IndexProps> = (props) => {
   return (
     <>
       <Head>
-        <title>States State</title>
+        <title>STATES STATE</title>
+        <meta
+          name="description"
+          content="Population trends in each prefecture are provided."
+        />
+        <meta
+          property="og:url"
+          content="https://states-state.vercel.app/ogp.png"
+        />
+        <meta property="og:type" content=" website" />
+        <meta property="og:title" content="STATES STATE" />
+        <meta
+          property="og:description"
+          content="Population trends in each prefecture are provided."
+        />
+        <meta property="og:site_name" content="STATES STATE" />
+        <meta
+          property="og:image"
+          content="https://states-state.vercel.app/ogp.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <States
