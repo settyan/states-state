@@ -1,4 +1,4 @@
-![States State](./hero.png)
+![States State](./img/hero.png)
 
 Population trends in each prefecture are provided.
 
