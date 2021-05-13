@@ -1,4 +1,9 @@
 .Container {
-  text-align: center;
   padding: 3rem;
+}
+.Container__Align_Center {
+  text-align: center;
+}
+.Container__Align_Right {
+  text-align: right;
 }

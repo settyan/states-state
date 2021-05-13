@@ -1,21 +1,32 @@
-import { createElement, ReactNode, VFC } from "react"
+import { createElement, ReactNode } from "react"
+
+import clsx from "clsx"
 
 import styles from "./segment.module.css"
 
+type Align = "left" | "center" | "right"
+
+const mapAligmContainerClass: { [P in Align]: string } = {
+  left: "Container__Align_Left",
+  center: "Container__Align_Center",
+  right: "Container__Align_Right",
+}
+
 export type SegmentProps = Readonly<
   JSX.IntrinsicElements["p"] & {
-    as?: string
+    as: string
+    align: Align
     children: ReactNode
   }
 >
 
-export const Segment: VFC<SegmentProps> = (props) => {
-  const { as, children, ...otherProps } = props
+export const Segment = (props: SegmentProps): JSX.Element => {
+  const { as, align, children, ...otherProps } = props
 
   return createElement(
     as as string,
     {
-      className: styles.Container,
+      className: clsx(styles.Container, styles[mapAligmContainerClass[align]]),
       ...otherProps,
     },
     children
@@ -24,4 +35,5 @@ export const Segment: VFC<SegmentProps> = (props) => {
 
 Segment.defaultProps = {
   as: "p",
-}
+  align: "center",
+} as SegmentProps

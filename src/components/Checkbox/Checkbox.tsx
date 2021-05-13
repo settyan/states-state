@@ -67,7 +67,7 @@ export const CheckBox = (props: CheckboxProps): JSX.Element => {
       <div
         className={clsx(
           styles.Container,
-          align && styles[mapAligmContainerClass[align]]
+          styles[mapAligmContainerClass[align]]
         )}>
         {children}
       </div>
