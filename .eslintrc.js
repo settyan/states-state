@@ -16,6 +16,7 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:etc/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
@@ -28,6 +29,7 @@ module.exports = {
     },
     ecmaVersion: 2021,
     sourceType: "module",
+    project: "./tsconfig.json",
   },
   plugins: ["@typescript-eslint", "react", "unused-imports", "import"],
   rules: {
@@ -60,5 +62,6 @@ module.exports = {
     ],
     "import/no-unresolved": 0,
     "no-fallthrough": 0,
+    "etc/prefer-interface": 2,
   },
 }
