@@ -4,8 +4,8 @@ import { render, screen } from "@testing-library/react"
 
 import { CheckBox } from "."
 
-describe("Chart", () => {
-  it("Check state", () => {
+describe("Checkbox", () => {
+  it("Check selected item", () => {
     const { rerender } = render(
       <CheckBox value={[]}>
         <CheckBox.Item value="A">A</CheckBox.Item>
