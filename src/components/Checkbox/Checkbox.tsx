@@ -35,7 +35,10 @@ export const CheckboxItem: VFC<CheckboxItemProps> = (props) => {
   return (
     <button
       onClick={handleOnClick}
-      className={clsx(styles.Item, checked && styles.ItemChecked)}>
+      className={clsx(styles.Item, checked && styles.ItemChecked)}
+      role="checkbox"
+      aria-checked={checked}
+      data-value={props.value}>
       {children}
     </button>
   )
