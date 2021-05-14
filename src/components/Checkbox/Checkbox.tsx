@@ -4,19 +4,19 @@ import clsx from "clsx"
 
 import styles from "./checkbox.module.css"
 
-export type CheckBoxContextParams = Readonly<{
-  value: (string | number)[]
-  onChange?(value: (string | number)[]): void
-}>
+export interface CheckBoxContextParams {
+  readonly value: (string | number)[]
+  readonly onChange?: (value: (string | number)[]) => void
+}
 
 const CheckboxContext = createContext<CheckBoxContextParams>({
   value: [],
 })
 
-export type CheckboxItemProps = Readonly<{
-  value: string | number
-  children: ReactNode
-}>
+export interface CheckboxItemProps {
+  readonly value: string | number
+  readonly children: ReactNode
+}
 
 export const CheckboxItem: VFC<CheckboxItemProps> = (props) => {
   const { children } = props
@@ -52,12 +52,12 @@ const mapAligmContainerClass: { [P in Align]: string } = {
   right: "Container__Align_Right",
 }
 
-export type CheckboxProps = Readonly<{
-  value: (string | number)[]
-  onChange?(newValue: (string | number)[]): void
-  align: Align
-  children: ReactNode
-}>
+export interface CheckboxProps {
+  readonly value: (string | number)[]
+  readonly onChange?: (newValue: (string | number)[]) => void
+  readonly align: Align
+  readonly children: ReactNode
+}
 
 export const CheckBox = (props: CheckboxProps): JSX.Element => {
   const { value, align, onChange, children } = props

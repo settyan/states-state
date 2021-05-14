@@ -1,11 +1,11 @@
 import type { State } from "@/types"
 
-export type StatesResponse = Readonly<{
+export interface StatesResponse {
   statusCode?: string
   message?: string
   description?: string
   result?: State[]
-}>
+}
 
 export const fetchStates: () => Promise<StatesResponse> = () =>
   fetch(`${process.env.API_URL}/api/v1/prefectures`, {

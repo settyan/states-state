@@ -4,9 +4,7 @@ import { Logo } from "@/components/Logo"
 
 import styles from "./header.module.css"
 
-export type HeaderProps = Readonly<Record<string, never>>
-
-export const Header: VFC<HeaderProps> = memo((props) => {
+export const Header: VFC = memo((props) => {
   const { ...headerProps } = props
 
   return (

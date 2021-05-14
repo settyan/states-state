@@ -10,9 +10,9 @@ import { getRandomHexColor } from "@/utils"
 import { GetStaticProps } from "next"
 import Head from "next/head"
 
-export type IndexProps = Readonly<{
-  states: State[]
-}>
+export interface IndexProps {
+  readonly states: State[]
+}
 
 const Index: VFC<IndexProps> = (props) => {
   const { states } = props

@@ -4,9 +4,9 @@ import { Header } from "@/components/Header"
 
 import styles from "./layout.module.css"
 
-type LayoutProps = Readonly<{
-  children: ReactNode
-}>
+interface LayoutProps {
+  readonly children: ReactNode
+}
 
 export const Layout: VFC<LayoutProps> = (props) => {
   const { children } = props

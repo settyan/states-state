@@ -3,15 +3,15 @@ import React, { VFC } from "react"
 import { CheckBox } from "@/components/Checkbox"
 import { State } from "@/types"
 
-export type StatesSelectItemProps = Readonly<{
-  state: State
-}>
+export interface StatesSelectItemProps {
+  readonly state: State
+}
 
-export type StatesSelectProps = Readonly<{
-  states: State[]
-  value: State[]
-  onChange?(state: State[]): void
-}>
+export interface StatesSelectProps {
+  readonly states: State[]
+  readonly value: State[]
+  readonly onChange?: (state: State[]) => void
+}
 
 export const StatesSelect: VFC<StatesSelectProps> = (props) => {
   const { states, value, onChange } = props

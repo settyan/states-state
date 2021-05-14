@@ -2,9 +2,7 @@ import React, { VFC } from "react"
 
 import Image from "next/image"
 
-export type LogoProps = Readonly<Record<string, never>>
-
-export const Logo: VFC<LogoProps> = (props) => {
+export const Logo: VFC = (props) => {
   const { ...LogoProps } = props
 
   return (

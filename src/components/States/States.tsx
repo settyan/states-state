@@ -6,11 +6,11 @@ import { State } from "@/types"
 import styles from "./states.module.css"
 import { StatesSelect } from "./StatesSelect"
 
-export type StatesProps = Readonly<{
-  states: State[]
-  value: State[]
-  onStateChange?(state: State[]): void
-}>
+export interface StatesProps {
+  readonly states: State[]
+  readonly value: State[]
+  readonly onStateChange?: (state: State[]) => void
+}
 
 export const States: VFC<StatesProps> = memo((props) => {
   const { states, value, onStateChange } = props

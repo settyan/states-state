@@ -6,22 +6,22 @@ import { Line } from "react-chartjs-2"
 
 import styles from "./chart.module.css"
 
-export type Data = Readonly<{
-  x: string | number
-  y: number
-}>
+export interface Data {
+  readonly x: string | number
+  readonly y: number
+}
 
-export type DataSet = Readonly<{
-  label: string
-  data: Data[]
-  borderColor?: Color
-  backgroundColor?: Color
-}>
+export interface DataSet {
+  readonly label: string
+  readonly data: Data[]
+  readonly borderColor?: Color
+  readonly backgroundColor?: Color
+}
 
-export type ChartProps = Readonly<{
-  loading: boolean
-  dataSets?: DataSet[]
-}>
+export interface ChartProps {
+  readonly loading: boolean
+  readonly dataSets?: DataSet[]
+}
 
 export const Chart: VFC<ChartProps> = memo((props) => {
   const data = {

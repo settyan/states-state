@@ -1,24 +1,24 @@
-export type Data = Readonly<{
-  year: number
-  value: number
-}>
+export interface Data {
+  readonly year: number
+  readonly value: number
+}
 
-export type Label = Readonly<{
-  label: string
-  data: Data[]
-}>
+export interface Label {
+  readonly label: string
+  readonly data: Data[]
+}
 
-export type Result = Readonly<{
-  boundaryYear: number
-  data: Label[]
-}>
+export interface Result {
+  readonly boundaryYear: number
+  readonly data: Label[]
+}
 
-export type PopulationResponse = Readonly<{
-  statusCode?: string
-  message?: string
-  description?: string
-  result?: Result
-}>
+export interface PopulationResponse {
+  readonly statusCode?: string
+  readonly message?: string
+  readonly description?: string
+  readonly result?: Result
+}
 
 export const fetchPopulation: (
   stateCode?: number | string
